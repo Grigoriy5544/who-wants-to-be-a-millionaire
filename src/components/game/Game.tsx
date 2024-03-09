@@ -52,7 +52,6 @@ export default function Game() {
           <button onClick={() => checkQuestion(2)}>{question.answers[2]}</button>
           <button onClick={() => checkQuestion(3)}>{question.answers[3]}</button>
         </div>
-        {/* hello */}
       </div>
     </div>
   )
