@@ -1,0 +1,18 @@
+$base-text-color: white;
+$base-color: rgb(0, 0, 50);
+
+@mixin gradient {
+  background: rgb(3,0,52);
+  background: -moz-linear-gradient(0deg, rgba(3,0,52,1) 0%, rgba(10,0,132,1) 68%, rgba(24,0,73,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(3,0,52,1) 0%, rgba(10,0,132,1) 68%, rgba(24,0,73,1) 100%);
+  background: linear-gradient(0deg, rgba(3,0,52,1) 0%, rgba(10,0,132,1) 68%, rgba(24,0,73,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030034",endColorstr="#180049",GradientType=1);
+}
+
+@mixin gradient90 {
+  background: rgb(3,0,52);
+  background: -moz-linear-gradient(90deg, rgba(3,0,52,1) 0%, rgba(10,0,132,1) 67%, rgba(24,0,73,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(3,0,52,1) 0%, rgba(10,0,132,1) 67%, rgba(24,0,73,1) 100%);
+  background: linear-gradient(90deg, rgba(3,0,52,1) 0%, rgba(10,0,132,1) 67%, rgba(24,0,73,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030034",endColorstr="#180049",GradientType=1);
+}
