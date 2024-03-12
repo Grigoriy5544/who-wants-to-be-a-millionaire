@@ -1,10 +1,11 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice} from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 import { ILevel } from './ILevel';
+import {lvlNumbers} from "../question/questions.ts";
 
 type LevelState = {
  levels: ILevel[];
- currentLevel: number;
+ currentLevel: lvlNumbers;
  isEnd: IsEnd
 }
 
@@ -60,8 +61,8 @@ export const levelSlice = createSlice({
 
 export const { levelUp, win, lose, restart } = levelSlice.actions
 
-export const getCurrentLevel = (state: RootState) => state.level.currentLevel
+export const getCurrentLevel = (state: RootState): lvlNumbers => state.level.currentLevel
 export const getLevels = (state: RootState) => state.level.levels
-export const isEnd = (state: RootState) => state.level.isEnd
+export const isEnd = (state: RootState): IsEnd => state.level.isEnd
 
 export default levelSlice.reducer

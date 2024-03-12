@@ -3,15 +3,17 @@ import { selectQuestionsByLvl } from '../../store/question/questionSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCurrentLevel, levelUp, lose, win } from '../../store/level/levelSlice'
 import { getRandomElement } from '../../utils/getRandomElement'
+// @ts-ignore
 import useSound from "use-sound"
 import chooseAnswer from "../../assets/sound/chooseAnswer.mp3"
 import correctAnswer from "../../assets/sound/correct.mp3"
 import wrongAnswer from "../../assets/sound/wrong.mp3"
+import {RootState} from "../../store/store.ts";
 
 export default function Game() {
   const dispatch = useDispatch()
-  const currentLvl = useSelector(state => getCurrentLevel(state))
-  const question = getRandomElement(useSelector(state => selectQuestionsByLvl(state, currentLvl)))
+  const currentLvl = useSelector((state: RootState) => getCurrentLevel(state))
+  const question = getRandomElement(useSelector((state: RootState) => selectQuestionsByLvl(state, currentLvl)))
   const [choosePlay] = useSound(chooseAnswer, {volume: 0.5})
   const [correct] = useSound(correctAnswer, {volume: 0.5})
   const [wrong] = useSound(wrongAnswer, {volume: 0.5})

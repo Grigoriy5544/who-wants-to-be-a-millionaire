@@ -3,15 +3,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { IsEnd, getCurrentLevel, isEnd, restart } from '../../store/level/levelSlice'
 import { calculateJackpot } from '../../utils/calculateJackpot'
 import { convertCost } from '../../utils/convertCost'
+// @ts-ignore
 import useSound from "use-sound"
 import winSound from "../../assets/sound/win.mp3" 
-import loseSound from "../../assets/sound/lose.mp3" 
+import loseSound from "../../assets/sound/lose.mp3"
+import {RootState} from "../../store/store.ts";
 
 export default function End() {
   const dispatch = useDispatch()
-  const end = useSelector(state => isEnd(state))
+  const end = useSelector((state: RootState) => isEnd(state))
   const isWin: boolean = end === IsEnd.win ? true : false
-  const level = useSelector(state => getCurrentLevel(state))
+  const level = useSelector((state: RootState) => getCurrentLevel(state))
 
   const jackpotSum = calculateJackpot(level, isWin)
   const jackpot = convertCost(jackpotSum)

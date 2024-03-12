@@ -4,10 +4,11 @@ import Game from './components/game/Game'
 import Table from './components/table/Table'
 import { IsEnd, isEnd } from './store/level/levelSlice'
 import End from './components/end/End'
+import {RootState} from "./store/store.ts";
 
 
 function App() {
-  if (useSelector(state => isEnd(state)) !== IsEnd.false)
+  if (useSelector((state: RootState) => isEnd(state)) !== IsEnd.false)
     return <End/>
 
   return (
