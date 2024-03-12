@@ -2,7 +2,7 @@
 
 .game {
   grid-column: 1 / 10;
-  background: url('../../assets/background.jpg') center  no-repeat;
+  background: url('../../assets/background.jpg') center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
       text-align: center;
       @include gradient90;
       border-radius: 25px;
-      font-size: 24px;
+      font-size: calc(14px + 12 * (100vw / 1280));
       grid-row: 1;
 
       -webkit-touch-callout: none;
@@ -40,22 +40,22 @@
       gap: 15px;
 
       & > button {
-      width: 100%;
-      padding: 30px 20px;
-      text-align: center;
-      @include gradient90;
-      border-radius: 25px;
-      font-size: 25px;
-      outline: none;
-      border: none;
-      cursor: pointer;
-      transition: filter 0.3s ease;
-      
-      &:hover {
-        filter: saturate(1.2);
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center;
+        @include gradient90;
+        border-radius: 25px;
+        font-size: calc(14px + 10 * (100vw / 1280));
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: filter 0.3s ease;
+
+        &:hover {
+          filter: saturate(1.2);
+        }
       }
     }
-    } 
   }
 }
 
@@ -68,28 +68,27 @@
     gap: 10px !important;
 
     & > button {
+      height: 100% !important;
       padding: 20px 10px !important;
-      font-size: 20px;
     }
   }
 }
 
 @media screen and (max-width: 1100px) {
   .game {
-    grid-column: 1/12;
+    grid-column: 1/-1;
+
 
     .question {
       width: 90%;
 
       .text {
         padding: 15px 5px;
-        font-size: 24px;
       }
 
       .answers > button {
-        height: 100%;
-        padding: 5px 8px;
-        font-size: 20px;
+        padding: 5px 8px !important;
+        min-height: 50px;
       }
     }
   }

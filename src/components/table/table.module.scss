@@ -9,12 +9,13 @@
   padding: 5%;
   @include gradient;
 
+
   .levels {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: 10px;
-    font-size: 20px;
+    font-size: calc(14px + 6 * (100vw / 1280));
 
     .level {
       width: 100%;
@@ -33,7 +34,7 @@
         background: goldenrod;
         border: white;
         border-radius: 20px;
-        transition: all 0.5s  ease;
+        transition: all 0.5s ease;
 
         & > * {
           color: rgb(85, 75, 0) !important;
@@ -85,11 +86,26 @@
 
 @media screen and (max-width: 1100px) {
   .table {
-    grid-column: 12;
-    
+    display: none;
+  }
+
+  .table.open {
+    display: flex;
+    padding: 2%;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    grid-column: 1/-1;
+
     .levels {
-      display: none;
-      font-size: 0.5em !important;
+      justify-content: space-between;
+    }
+
+    .level {
+      font-size: 1.8em !important;
+
     }
   }
 }
